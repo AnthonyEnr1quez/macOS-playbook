@@ -38,7 +38,3 @@ zstyle ':completion:::::' completer _expand _complete _ignored _approximate # en
 #bindkey '^[[3~' delete-char
 #bindkey '^[3;5~' delete-char
 
-# pure config
-autoload -U promptinit; promptinit
-prompt pure
-

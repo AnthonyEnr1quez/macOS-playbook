@@ -3,6 +3,3 @@
 zdharma/fast-syntax-highlighting
 zsh-users/zsh-completions
 
-# pure
-mafredri/zsh-async
-sindresorhus/pure
