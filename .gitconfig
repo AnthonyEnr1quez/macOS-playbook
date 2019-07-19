@@ -1,0 +1,8 @@
+[user]
+	name = AE060571
+	email = Anthony.Enriquez@cerner.com
+[core]
+	autocrlf = true
+	editor = vim
+[hub]
+	host = github.cerner.com

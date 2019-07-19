@@ -41,9 +41,11 @@ zstyle ':completion:::::' completer _expand _complete _ignored _approximate # en
 eval `dircolors ~/.dircolors`
 
 # aliases
+ # ls
 alias ll='ls -l'
 alias ls='ls -F --color=auto --show-control-chars' 
 
+ # mvn
 alias mci='mvn clean install'
 alias qi='mvn clean install -DskipTests'
 alias mee='mvn eclipse:eclipse -DdownloadSources=true -DdownloadJavadocs=true -Declipse.useProjectReferences=false -U'
@@ -51,9 +53,21 @@ alias mec='mvn eclipse:clean'
 alias rebuild='mvn clean eclipse:clean; mvn install -DskipTests; mvn eclipse:eclipse'
 alias mcs='mvn clean site'
 
-#alias node='winpty node.exe'
-
+ #git
 alias gcam='git add . && git commit -m'
 alias gs='git status'
 alias gp='git push'
 alias gf='git fetch --all'
+
+ #ssh
+#alias 'ssh provide'="~/.ssh/provide.sh"
+#alias 'ssh solm64'="~/.ssh/solm64.sh"
+ssh() {
+	if [[ $@ == "provide" ]]; then
+		command ~/.ssh/provide.sh
+	elif [[ $@ == "solm64" ]]; then
+		command ~/.ssh/solm64.sh
+	else
+		command ssh "$@"
+	fi		
+}
