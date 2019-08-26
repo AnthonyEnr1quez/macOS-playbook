@@ -52,6 +52,8 @@ alias mee='mvn eclipse:eclipse -DdownloadSources=true -DdownloadJavadocs=true -D
 alias mec='mvn eclipse:clean'
 alias rebuild='mvn clean eclipse:clean; mvn install -DskipTests; mvn eclipse:eclipse'
 alias mcs='mvn clean site'
+alias mfr='mvn release:prepare -DdryRun=true'
+alias mr='mvn release:prepare'
 
  #git
 alias gcam='git add . && git commit -m'
@@ -59,14 +61,23 @@ alias gs='git status'
 alias gp='git push'
 alias gf='git fetch --all'
 
- #ssh
-#alias 'ssh provide'="~/.ssh/provide.sh"
-#alias 'ssh solm64'="~/.ssh/solm64.sh"
 ssh() {
 	if [[ $@ == "provide" ]]; then
-		command ~/.ssh/provide.sh
+		command ~/.ssh/selflogin.sh spoon.ip.devcerner.net
 	elif [[ $@ == "solm64" ]]; then
-		command ~/.ssh/solm64.sh
+		command ~/.ssh/login.sh cerner root solm64.ip.devcerner.net
+	elif [[ $@ == "intgm" ]]; then
+		command ~/.ssh/selflogin.sh ipint1.ip.devcerner.net
+	elif [[ $@ == "1501eng" ]]; then
+		command ~/.ssh/selflogin.sh ip1501ar.ip.devcerner.net
+	elif [[ $@ = "1501expkg" ]]; then
+		command ~/.ssh/login.sh trogdor mcstest ip1501ep.northamerica.cerner.net
+	elif [[ $@ = "solgm" ]]; then
+		command ~/.ssh/selflogin.sh ipsol3.ip.devcerner.net
+	elif [[ $@ = "s18bx" ]]; then
+		command ~/.ssh/selflogin.sh ips18bx.ip.devcerner.net
+	elif [[ $@ = "eng18" ]]; then
+		command ~/.ssh/selflogin.sh ipara1.ip.devcerner.net
 	else
 		command ssh "$@"
 	fi		
