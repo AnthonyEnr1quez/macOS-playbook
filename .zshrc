@@ -38,6 +38,9 @@ zstyle ':completion:::::' completer _expand _complete _ignored _approximate # en
 #bindkey '^[[3~' delete-char
 #bindkey '^[3;5~' delete-char
 
+#connect to windows docker daemon
+export DOCKER_HOST=tcp://localhost:2375
+
 eval `dircolors ~/.dircolors`
 
 # aliases
@@ -54,15 +57,20 @@ alias rebuild='mvn clean eclipse:clean; mvn install -DskipTests; mvn eclipse:ecl
 alias mcs='mvn clean site'
 alias mfr='mvn release:prepare -DdryRun=true'
 alias mr='mvn release:prepare'
+alias mcc='mvn clean compile'
+alias mcp='mvn clean package -DskipTests'
 
  #git
 alias gcam='git add . && git commit -m'
 alias gs='git status'
 alias gp='git push'
 alias gf='git fetch --all'
+alias gitpurge='git fetch --all -p; git branch -vv | grep ": gone]" | awk '{ print $1 }' | xargs -n 1 git branch -d'
 
 ssh() {
-	if [[ $@ == "provide" ]]; then
+	if [[ $@ == "help" ]]; then
+		command echo -e "Available Domains:\nprovide\nsolm64\nintgm\n1501eng\n1501expkg\nsolgm\ns18bx\neng18\nexp18\ndeveng"
+	elif [[ $@ == "provide" ]]; then
 		command ~/.ssh/selflogin.sh spoon.ip.devcerner.net
 	elif [[ $@ == "solm64" ]]; then
 		command ~/.ssh/login.sh cerner root solm64.ip.devcerner.net
@@ -78,7 +86,25 @@ ssh() {
 		command ~/.ssh/selflogin.sh ips18bx.ip.devcerner.net
 	elif [[ $@ = "eng18" ]]; then
 		command ~/.ssh/selflogin.sh ipara1.ip.devcerner.net
+	elif [[ $@ = "exp18" ]]; then
+		command ~/.ssh/login.sh sv055015 sv055015 ipexp18app.northamerica.cerner.net
+	elif [[ $@ = "deveng" ]]; then
+		command ~/.ssh/login.sh ae060571 ae060571 deveng1.ip.devcerner.net
 	else
 		command ssh "$@"
 	fi		
 }
+
+scp() {
+	if [[ $@ = "help" ]]; then
+		command echo scp domainName fileName serverFolder
+	elif [[ $1 == "provide" ]]; then
+		command scp $2 ae060571@spoon.ip.devcerner.net:/cerner/w_standard/provide/java/$3
+	else
+		command scp "$@"
+	fi
+}
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/ant/.sdkman"
+[[ -s "/home/ant/.sdkman/bin/sdkman-init.sh" ]] && source "/home/ant/.sdkman/bin/sdkman-init.sh"
