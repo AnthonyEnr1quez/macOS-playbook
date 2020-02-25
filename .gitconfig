@@ -4,5 +4,6 @@
 [core]
 	autocrlf = true
 	editor = vim
+	filemode = false
 [hub]
 	host = github.cerner.com

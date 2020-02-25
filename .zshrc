@@ -65,11 +65,11 @@ alias gcam='git add . && git commit -m'
 alias gs='git status'
 alias gp='git push'
 alias gf='git fetch --all'
-alias gitpurge='git fetch --all -p; git branch -vv | grep ": gone]" | awk '{ print $1 }' | xargs -n 1 git branch -d'
+alias gitpurge='git fetch --all -p; git branch -vv | grep ": gone]" | awk "{ print $1 }" | xargs -n 1 git branch -D'
 
 ssh() {
 	if [[ $@ == "help" ]]; then
-		command echo -e "Available Domains:\nprovide\nsolm64\nintgm\n1501eng\n1501expkg\nsolgm\ns18bx\neng18\nexp18\ndeveng"
+		command echo -e "Available Domains:\nprovide\nsolm64\nintgm\n1501eng\n1501expkg\nsolgm\ns18bx\neng18\nexp18\ndeveng\ns18da\ns18xa"
 	elif [[ $@ == "provide" ]]; then
 		command ~/.ssh/selflogin.sh spoon.ip.devcerner.net
 	elif [[ $@ == "solm64" ]]; then
@@ -89,7 +89,11 @@ ssh() {
 	elif [[ $@ = "exp18" ]]; then
 		command ~/.ssh/login.sh sv055015 sv055015 ipexp18app.northamerica.cerner.net
 	elif [[ $@ = "deveng" ]]; then
-		command ~/.ssh/login.sh ae060571 ae060571 deveng1.ip.devcerner.net
+		command ~/.ssh/selflogin.sh deveng1.ip.devcerner.net
+	elif [[ $@ = "s18da" ]]; then
+		command ~/.ssh/selflogin.sh ips18da.ip.devcerner.net
+	elif [[ $@ = "s18xa" ]]; then
+		command ~/.ssh/selflogin.sh ips18xa.ip.devcerner.net
 	else
 		command ssh "$@"
 	fi		
@@ -100,6 +104,10 @@ scp() {
 		command echo scp domainName fileName serverFolder
 	elif [[ $1 == "provide" ]]; then
 		command scp $2 ae060571@spoon.ip.devcerner.net:/cerner/w_standard/provide/java/$3
+	elif [[ $1 == "eng18" ]]; then
+		command scp $2 ae060571@ipara1.ip.devcerner.net:/cerner/w_standard/eng18/java/$3
+	elif [[ $1 == "solgm" ]]; then
+		command scp $2 ae060571@ipsol3.ip.devcerner.net:/cerner/w_standard/solgm/java/$3
 	else
 		command scp "$@"
 	fi
