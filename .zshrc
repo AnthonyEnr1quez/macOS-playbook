@@ -38,16 +38,12 @@ zstyle ':completion:::::' completer _expand _complete _ignored _approximate # en
 #bindkey '^[[3~' delete-char
 #bindkey '^[3;5~' delete-char
 
-#connect to windows docker daemon
-export DOCKER_HOST=tcp://localhost:2375
-
-eval `dircolors ~/.dircolors`
+eval `gdircolors ~/.dircolors`
 
 # aliases
  # ls
 alias ll='ls -l'
-alias ls='ls -F --color=auto --show-control-chars' 
-
+alias ls='ls -F -G' 
  # mvn
 alias mci='mvn clean install'
 alias qi='mvn clean install -DskipTests'
@@ -67,52 +63,6 @@ alias gp='git push'
 alias gf='git fetch --all'
 alias gitpurge='git fetch --all -p; git branch -vv | grep ": gone]" | awk "{ print $1 }" | xargs -n 1 git branch -D'
 
-ssh() {
-	if [[ $@ == "help" ]]; then
-		command echo -e "Available Domains:\nprovide\nsolm64\nintgm\n1501eng\n1501expkg\nsolgm\ns18bx\neng18\nexp18\ndeveng\ns18da\ns18xa"
-	elif [[ $@ == "provide" ]]; then
-		command ~/.ssh/selflogin.sh spoon.ip.devcerner.net
-	elif [[ $@ == "solm64" ]]; then
-		command ~/.ssh/login.sh cerner root solm64.ip.devcerner.net
-	elif [[ $@ == "intgm" ]]; then
-		command ~/.ssh/selflogin.sh ipint1.ip.devcerner.net
-	elif [[ $@ == "1501eng" ]]; then
-		command ~/.ssh/selflogin.sh ip1501ar.ip.devcerner.net
-	elif [[ $@ = "1501expkg" ]]; then
-		command ~/.ssh/login.sh trogdor mcstest ip1501ep.northamerica.cerner.net
-	elif [[ $@ = "solgm" ]]; then
-		command ~/.ssh/selflogin.sh ipsol3.ip.devcerner.net
-	elif [[ $@ = "s18bx" ]]; then
-		command ~/.ssh/selflogin.sh ips18bx.ip.devcerner.net
-	elif [[ $@ = "eng18" ]]; then
-		command ~/.ssh/selflogin.sh ipara1.ip.devcerner.net
-	elif [[ $@ = "exp18" ]]; then
-		command ~/.ssh/login.sh sv055015 sv055015 ipexp18app.northamerica.cerner.net
-	elif [[ $@ = "deveng" ]]; then
-		command ~/.ssh/selflogin.sh deveng1.ip.devcerner.net
-	elif [[ $@ = "s18da" ]]; then
-		command ~/.ssh/selflogin.sh ips18da.ip.devcerner.net
-	elif [[ $@ = "s18xa" ]]; then
-		command ~/.ssh/selflogin.sh ips18xa.ip.devcerner.net
-	else
-		command ssh "$@"
-	fi		
-}
-
-scp() {
-	if [[ $@ = "help" ]]; then
-		command echo scp domainName fileName serverFolder
-	elif [[ $1 == "provide" ]]; then
-		command scp $2 ae060571@spoon.ip.devcerner.net:/cerner/w_standard/provide/java/$3
-	elif [[ $1 == "eng18" ]]; then
-		command scp $2 ae060571@ipara1.ip.devcerner.net:/cerner/w_standard/eng18/java/$3
-	elif [[ $1 == "solgm" ]]; then
-		command scp $2 ae060571@ipsol3.ip.devcerner.net:/cerner/w_standard/solgm/java/$3
-	else
-		command scp "$@"
-	fi
-}
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/ant/.sdkman"
-[[ -s "/home/ant/.sdkman/bin/sdkman-init.sh" ]] && source "/home/ant/.sdkman/bin/sdkman-init.sh"
+# pure config
+autoload -U promptinit; promptinit
+prompt pure
