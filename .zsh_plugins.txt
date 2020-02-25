@@ -3,6 +3,6 @@
 zdharma/fast-syntax-highlighting
 zsh-users/zsh-completions
 
-# pure
-mafredri/zsh-async
-sindresorhus/pure
+robbyrussell/oh-my-zsh path:lib
+
+robbyrussell/oh-my-zsh path:themes/af-magic.zsh-theme
