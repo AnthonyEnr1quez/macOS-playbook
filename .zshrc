@@ -59,8 +59,11 @@ alias mcc='mvn clean compile'
 alias mcp='mvn clean package -DskipTests'
 
  #git
-alias gcam='git add . && git commit -m'
+alias gcam='git commit -am'
 alias gs='git status'
 alias gp='git push'
+alias gpsu='git branch --show-current| xargs git push --set-upstream origin' 
 alias gf='git fetch --all'
 alias gitpurge='git fetch --all -p; git branch -vv | grep ": gone]" | awk "{ print $1 }" | xargs -n 1 git branch -D'
+alias agcam='git -c user.name="AnthonyEnr1quez" -c user.email="aenriquez_dev@icloud.com" commit -am'
+alias gfu='git fetch upstream && git checkout master && git rebase upstream/master'
