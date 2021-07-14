@@ -41,6 +41,8 @@ zstyle ':completion:::::' completer _expand _complete _ignored _approximate # en
 eval `gdircolors ~/.dircolors`
 
 # aliases
+ # dotfile config https://www.atlassian.com/git/tutorials/dotfiles
+alias config='/usr/local/bin/git --git-dir=$HOME/.config/ --work-tree=$HOME'
  # ls
 alias ll='ls -l'
 alias ls='ls -F -G' 
@@ -62,7 +64,3 @@ alias gs='git status'
 alias gp='git push'
 alias gf='git fetch --all'
 alias gitpurge='git fetch --all -p; git branch -vv | grep ": gone]" | awk "{ print $1 }" | xargs -n 1 git branch -D'
-
-# pure config
-autoload -U promptinit; promptinit
-prompt pure

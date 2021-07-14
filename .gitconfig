@@ -1,8 +1,5 @@
 [user]
-	email = aenriquez_dev@icloud.com
-	name = AnthonyEnr1quez
-[filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
+	email = aenriq30@ford.com
+	name = aenriq30
+[core]
+    editor = vim
