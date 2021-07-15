@@ -4,6 +4,9 @@
 source <(antibody init)
 antibody bundle < ~/.zsh_plugins.txt
 
+# spaceship prompt options
+SPACESHIP_GRADLE_JVM_SHOW=false
+
 # autocompletions
 autoload -Uz compinit
 typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
@@ -19,6 +22,9 @@ zmodload -i zsh/complist
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=100000
 SAVEHIST=$HISTSIZE
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 setopt hist_reduce_blanks # remove superfluous blanks from history items
 setopt inc_append_history # save history entries as soon as they are entered
@@ -37,6 +43,13 @@ zstyle ':completion:::::' completer _expand _complete _ignored _approximate # en
 # rebind delete key, will test w/ windows soon
 #bindkey '^[[3~' delete-char
 #bindkey '^[3;5~' delete-char
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
 
 eval `gdircolors ~/.dircolors`
 
@@ -59,11 +72,11 @@ alias mcc='mvn clean compile'
 alias mcp='mvn clean package -DskipTests'
 
  #git
-alias gcam='git commit -am'
+alias gcam='git add . && git commit -m'
 alias gs='git status'
 alias gp='git push'
 alias gpsu='git branch --show-current| xargs git push --set-upstream origin' 
 alias gf='git fetch --all'
 alias gitpurge='git fetch --all -p; git branch -vv | grep ": gone]" | awk "{ print $1 }" | xargs -n 1 git branch -D'
-alias agcam='git -c user.name="AnthonyEnr1quez" -c user.email="aenriquez_dev@icloud.com" commit -am'
+alias agcam='git add . && git -c user.name="AnthonyEnr1quez" -c user.email="aenriquez_dev@icloud.com" commit -m'
 alias gfu='git fetch upstream && git checkout master && git rebase upstream/master'

@@ -2,4 +2,5 @@
 
 zdharma/fast-syntax-highlighting
 zsh-users/zsh-completions
+zsh-users/zsh-history-substring-search
 spaceship-prompt/spaceship-prompt
