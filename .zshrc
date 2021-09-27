@@ -43,18 +43,11 @@ zstyle ':completion:::::' completer _expand _complete _ignored _approximate # en
 #bindkey '^[[3~' delete-char
 #bindkey '^[3;5~' delete-char
 
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-# jenv
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
 eval `gdircolors ~/.dircolors`
 
 # aliases
   # dotfile config https://www.atlassian.com/git/tutorials/dotfiles
-alias config='/usr/local/bin/git --git-dir=$HOME/.config/ --work-tree=$HOME'
+#alias config='/usr/local/bin/git --git-dir=$HOME/.config/ --work-tree=$HOME'
  # ls
 alias ll='ls -l'
 alias ls='ls -F -G' 
@@ -83,39 +76,3 @@ alias gfu='git fetch upstream && git checkout master && git rebase upstream/mast
  #intellij
 alias idea='open -na "IntelliJ IDEA.app" --args "$@"'
 
-# ford proxy settings
-proxyHost=internet.ford.com
-proxyPort=83
-httpProxyUrl="http://$proxyHost:$proxyPort"
-noProxies='127.0.0.1|localhost|*.github.ford.com|*.nexus.ford.com|*.sonarqube.ford.com|*.dearborn.ford.com|app-concourse.cf.ford.com'
-initialize(){
- export LOCAL_REPOS_DIR="$HOME/Projects"
- export LOCAL_CLOUD_CONFIG_BOOTSTRAP='true'
- export ORG_GRADLE_PROJECT_nexus_user='CSDNNEXS'
- export ORG_GRADLE_PROJECT_nexus_password='KWABew@3y'
- export ORG_GRADLE_PROJECT_repository='ford_csdn_private_snapshot_repository'
-}
-setproxies(){
- export no_proxy="${noProxies//|/,}"
- export NO_PROXY="${noProxies//|/,}"
- export http_proxy="$httpProxyUrl"
- export https_proxy="$httpProxyUrl"
- export HTTP_PROXY="$httpProxyUrl"
- export HTTPS_PROXY="$httpProxyUrl"
- export JAVA_TOOL_OPTIONS="-Dhttp.proxyHost=$proxyHost -Dhttp.proxyPort=$proxyPort -Dhttps.proxyHost=$proxyHost -Dhttps.proxyPort=$proxyPort -Dhttp.nonProxyHosts=\"$noProxies\""
-echo "Host *
- ProxyCommand nc -X connect -x $proxyHost:$proxyPort %h %p" > ~/.ssh/config
-}
-unsetproxies(){
- unset no_proxy
- unset NO_PROXY
- unset http_proxy
- unset https_proxy
- unset HTTP_PROXY
- unset HTTPS_PROXY
- unset JAVA_TOOL_OPTIONS
- unset JAVA_OPTS
- rm ~/.ssh/config
-}
-initialize
-setproxies
