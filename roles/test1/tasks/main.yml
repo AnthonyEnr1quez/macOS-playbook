@@ -1,0 +1,9 @@
+---
+# tasks file for test1
+
+- name: Ensure .tst config in place
+  template:
+    src: .tst.j2
+    dest: "{{ ansible_env.HOME }}/.tst"
+    backup: true
+    mode: 0640
