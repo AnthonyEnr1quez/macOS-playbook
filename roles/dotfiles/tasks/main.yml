@@ -1,0 +1,32 @@
+---
+# tasks file for dotfiles
+
+# todo, file permissions
+
+- name: create zshrc in home dir
+  template:
+    src: .zshrc.j2
+    dest: "{{ ansible_env.HOME }}/.zshrc"
+    #backup: true
+    mode: 0640
+
+- name: create zsh_plugins in home dir
+  template:
+    src: .zsh_plugins.j2
+    dest: "{{ ansible_env.HOME }}/.zsh_plugins.txt"
+    #backup: true
+    mode: 0640
+
+- name: create gitconfig in home dir
+  template:
+    src: .gitconfig.j2
+    dest: "{{ ansible_env.HOME }}/.gitconfig"
+    #backup: true
+    mode: 0640
+
+- name: copy dircolor config in place
+  copy:
+    src: .dircolors
+    dest: "{{ ansible_env.HOME }}/.dircolors"
+    # backup: yes
+    mode: 0640

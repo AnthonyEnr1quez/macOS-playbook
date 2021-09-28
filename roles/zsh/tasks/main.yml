@@ -1,0 +1,17 @@
+---
+# tasks file for zsh
+
+- name: Get the path to ZSH
+  become: false
+  local_action: command which zsh
+  register: zsh_path
+
+- name: "Ensure homebrew zsh is in allowed shells"
+  lineinfile:
+    path: /etc/shells
+    line: "{{ zsh_path.stdout }}"
+  become: true
+
+- name: Set ZSH as the default shell
+  shell: chsh -s $(which zsh) {{ lookup('env', 'USER') }}
+  become: true

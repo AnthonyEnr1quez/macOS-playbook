@@ -1,9 +1,0 @@
-- name: test config
-  hosts: localhost
-  gather_facts: yes
-  become: no
-
-  tasks:
-    - name: configure
-      import_role:
-        name: test1

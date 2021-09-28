@@ -1,0 +1,14 @@
+- name: mac setup v1
+  hosts: localhost
+  gather_facts: yes
+  become: no
+
+  roles:
+    - homebrew
+    - zsh
+    - dotfiles
+
+  # tasks:
+  #   - name: setup dotfiles
+  #     import_role:
+  #       name: dotfiles

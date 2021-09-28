@@ -1,0 +1,38 @@
+---
+# tasks file for homebrew
+
+# https://github.com/geerlingguy/ansible-collection-mac/blob/master/roles/homebrew/README.md
+
+
+- name: Install homebrew
+  include_role:
+    name: geerlingguy.mac.homebrew
+  vars:
+  # mas_installed_app_ids:
+  #   - 424389933 # Final Cut Pro
+  #   - 497799835 # Xcode
+
+    homebrew_taps:
+      - adoptopenjdk/openjdk
+      - homebrew/cask
+      # - homebrew/cask-versions
+
+    homebrew_installed_packages:
+      - git
+      - zsh
+      - antibody
+      # - chamber
+      # - direnv
+      # - git-extras
+      # - node
+      # - pyenv
+      # - zlib
+    
+    # homebrew_upgrade_all_packages: true
+
+    homebrew_cask_apps:
+      # - docker
+      # - firefox
+      # - iterm2
+      # - slack
+      - vlc
