@@ -19,20 +19,26 @@
 
     homebrew_installed_packages:
       - git
+      - bash
+      - coreutils
+      - gawk
+      - htop
+      - gnu-sed
       - zsh
+      - zsh-completion
       - antibody
-      # - chamber
-      # - direnv
-      # - git-extras
-      # - node
-      # - pyenv
-      # - zlib
+      - zlib
+      - pyenv
     
-    # homebrew_upgrade_all_packages: true
+    homebrew_upgrade_all_packages: true
 
     homebrew_cask_apps:
       # - docker
       # - firefox
       # - iterm2
       # - slack
+      # - macfuse
+      # - unetbootin
+      - mullvadvpn
+      # - jetbrains-toolbox
       - vlc
