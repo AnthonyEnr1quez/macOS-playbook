@@ -8,13 +8,15 @@
   include_role:
     name: geerlingguy.mac.homebrew
   vars:
-  # mas_installed_app_ids:
+    mas_installed_app_ids:
+      - 937984704 # Amphetamine
   #   - 424389933 # Final Cut Pro
   #   - 497799835 # Xcode
 
     homebrew_taps:
       - adoptopenjdk/openjdk
       - homebrew/cask
+      - caskroom/fonts
       # - homebrew/cask-versions
 
     homebrew_installed_packages:
@@ -30,7 +32,7 @@
       - zlib
       - pyenv
     
-    homebrew_upgrade_all_packages: true
+    homebrew_upgrade_all_packages: false
 
     homebrew_cask_apps:
       # - docker
@@ -44,3 +46,8 @@
       - intellij-ide-ce
       # - goland
       - vlc
+      # - boostnote
+      # - postman
+      - alt-tab
+      - karabiner-elements
+      - font-hack-nerd-font

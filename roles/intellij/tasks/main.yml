@@ -1,0 +1,18 @@
+---
+# tasks file for intellij
+
+
+- name: create zshrc in home dir
+  tags: intellij
+  include_role:
+    name: gantsign.intellij-plugins
+  vars:
+    users:
+    - username: ant
+      intellij_plugins:
+        - Dark Purple Theme
+        - google-java-format
+        - Maven Helper
+        - Nyan Progress Bar
+        - Rainbow Brackets
+        - Save Actions

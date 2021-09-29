@@ -76,3 +76,6 @@ alias gfu='git fetch upstream && git checkout master && git rebase upstream/mast
  #intellij
 alias idea='open -na "IntelliJ IDEA.app" --args "$@"'
 
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
