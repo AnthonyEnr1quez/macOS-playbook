@@ -40,5 +40,7 @@
       # - macfuse
       # - unetbootin
       - mullvadvpn
-      # - jetbrains-toolbox
+      # - intellij-idea
+      - intellij-ide-ce
+      # - goland
       - vlc
