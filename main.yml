@@ -1,5 +1,5 @@
 - name: mac setup v1
-  hosts: mojave
+  hosts: localhost
   gather_facts: yes
   become: no
 
@@ -12,7 +12,7 @@
 
   roles:
     # - homebrew
-    # - zsh
+    - zsh
     # - dotfiles
     - role: gantsign.intellij-plugins
       intellij_plugins_python_major_version: 3

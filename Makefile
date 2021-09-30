@@ -1,14 +1,11 @@
 .PHONY: bootstrap_mac_untested
 bootstrap_mac_untested: ## install pre-dependencies needed to install everything on mac
-	xcode-select --install
-	sudo xcodebuild -license
-	sudo pip3 install --upgrade pip
-	pip3 install --ignore-installed ansible
+	#xcode-select --install
+	#sudo xcodebuild -license
+	pip install --upgrade pip
+	pip install --ignore-installed ansible lxml
 	ansible-galaxy install -r requirements.yml
-	pip3 install --ignore-installed lxml
-	## PIP_REQUIRE_VIRTUALENV=false pip install -U -r requirements.txt
-	## pipx install ansible
-	## ansible-galaxy install -r requirements.yml
+	## todo setup pyenv before?
 
 .PHONY: setup_requirements
 setup_requirements:
@@ -20,7 +17,7 @@ debug_main:
 
 .PHONY: zsh
 zsh: 
-	ansible-playbook -K main.yml --tags zsh -i inventory --ask-pass -v
+	ansible-playbook -K main.yml --tags zsh -v
 
 .PHONY: intellij
 intellij: 
