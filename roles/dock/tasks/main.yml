@@ -1,0 +1,50 @@
+---
+# tasks file for dock TODO
+
+- name: Setup dock
+  include_role:
+    name: geerlingguy.mac.dock
+  vars:
+    dockitems_remove:
+      - Launchpad
+      - Maps
+      - Photos
+      - Contacts
+      - Reminders
+      - Notes
+      - TV
+      - Podcasts
+      - News
+      - Keynote
+      - Numbers
+      - Pages
+      - App Store
+
+    dockitems_persist:
+      - name: Firefox Developer Edition
+        path: /Applications/Firefox Developer Edition.app
+        pos: 1
+      - name: Safari
+        path: /Applications/Safari.app
+        pos: 2
+      - name: iTerm
+        path: /Applications/iTerm.app
+        pos: 3
+      - name: Visual Studio Code
+        path: /Applications/Visual Studio Code.app
+        pos: 4
+      - name: Mail
+        path: /System/Applications/Mail.app
+        pos: 5
+      - name: Calendar
+        path: /System/Applications/Calendar.app
+        pos: 6
+      - name: Messages
+        path: /System/Applications/Messages.app
+        pos: 7
+      - name: Signal
+        path: /Applications/Signal.app
+        pos: 8
+      - name: Slack
+        path: /Applications/Slack.app
+        pos: 9

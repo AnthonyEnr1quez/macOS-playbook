@@ -3,13 +3,6 @@
   gather_facts: yes
   become: no
 
-  tasks:
-    - name: check version
-      command: python --version
-      register: out
-
-    - debug: var=out.stdout_lines
-
   roles:
     # - homebrew
     - zsh
@@ -36,3 +29,10 @@
   #   - name: setup dotfiles
   #     import_role:
   #       name: dotfiles
+  #   - name: Don’t display the annoying prompt when quitting iTerm
+  #     tags: macos
+  #     osx_defaults:
+  #       domain: com.googlecode.iterm2
+  #       key: PromptOnQuit
+  #       type: int
+  #       value: "0"
