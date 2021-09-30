@@ -31,6 +31,7 @@
       - zlib
       - pyenv
       - docker-compose
+      - jenv
     
     homebrew_upgrade_all_packages: false
 

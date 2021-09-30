@@ -2,6 +2,8 @@
 roles:
   - name: elliotweiser.osx-command-line-tools
   - name: gantsign.intellij-plugins
+  - name: Comcast.sdkman
+  - name: suzuki-shunsuke.gvm
 
 collections:
   - name: geerlingguy.mac

@@ -25,7 +25,12 @@
             - com.intellij.plugins.eclipsekeymap # Eclipse Keymap
             - appland.appmap # AppMap
 
-  # tasks:
+  tasks:
+    - name: Create projects dir
+      file:
+        path: "{{ ansible_env.HOME }}/Projects"
+        state: directory
+    
   #   - name: setup dotfiles
   #     import_role:
   #       name: dotfiles
