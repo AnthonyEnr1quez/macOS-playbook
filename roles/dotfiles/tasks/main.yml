@@ -17,6 +17,10 @@
     #backup: true
     mode: 0640
 
+- name: set variable file
+  tags: dotfiles
+  include_vars: vars/personal.yml
+
 - name: create gitconfig in home dir
   template:
     src: .gitconfig.j2

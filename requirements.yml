@@ -4,6 +4,7 @@ roles:
   - name: gantsign.intellij-plugins
   - name: Comcast.sdkman
   - name: suzuki-shunsuke.gvm
+    version: v6.0.0
 
 collections:
   - name: geerlingguy.mac

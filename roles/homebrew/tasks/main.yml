@@ -58,6 +58,7 @@
       - firefox-developer-edition # todo test #homebrew/cask-versions/firefox-developer-edition
       - visual-studio-code
       - sensiblesidebuttons
+      - scroll-reverser
 
       - signal
       - steam

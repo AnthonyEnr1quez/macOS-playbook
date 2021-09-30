@@ -6,7 +6,7 @@
   roles:
     # - homebrew
     - zsh
-    # - dotfiles
+    - dotfiles
     - role: gantsign.intellij-plugins
       intellij_plugins_python_major_version: 3
       intellij_plugins_intellij_home: '/Applications/Intellij IDEA CE.app/Contents/Resources'
