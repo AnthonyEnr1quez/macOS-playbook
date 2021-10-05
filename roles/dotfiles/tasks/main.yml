@@ -5,14 +5,14 @@
 
 - name: create zshrc in home dir
   template:
-    src: .zshrc.j2
+    src: zshrc.j2
     dest: "{{ ansible_env.HOME }}/.zshrc"
     #backup: true
     mode: 0640
 
 - name: create zsh_plugins in home dir
   template:
-    src: .zsh_plugins.j2
+    src: zsh_plugins.j2
     dest: "{{ ansible_env.HOME }}/.zsh_plugins.txt"
     #backup: true
     mode: 0640
@@ -22,7 +22,7 @@
 
 - name: create gitconfig in home dir
   template:
-    src: .gitconfig.j2
+    src: gitconfig.j2
     dest: "{{ ansible_env.HOME }}/.gitconfig"
     #backup: true
     mode: 0640
