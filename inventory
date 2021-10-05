@@ -1,5 +1,0 @@
-[mojave]
-192.168.86.206
-
-[mojave:vars]
-ansible_python_interpreter=/Users/ant/.pyenv/shims/python

@@ -21,8 +21,8 @@ ansible_requirements:
 playbook_base= ansible-playbook -K main.yml
 
 .PHONY: main
-debug_main:
-	ansible-playbook -K main.yml -i inventory --ask-pass -v
+main:
+	ansible-playbook -K main.yml -i inventory.yml --limit "mojave" --ask-pass -v
 
 .PHONY: homebrew
 homebrew: 
@@ -34,11 +34,11 @@ zsh:
 
 .PHONY: dotfiles
 dotfiles: 
-	ansible-playbook -K main.yml --tags dotfiles  -i inventory --ask-pass -v
+	ansible-playbook -K main.yml --tags dotfiles  -i inventory.yml --ask-pass -v
 
 .PHONY: intellij
 intellij: 
-	ansible-playbook -K main.yml --tags intellij -i inventory --ask-pass -v
+	ansible-playbook -K main.yml --tags intellij -i inventory.yml --ask-pass -v
 
 .PHONY: dock
 dock:
