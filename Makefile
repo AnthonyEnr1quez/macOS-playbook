@@ -34,7 +34,7 @@ zsh:
 
 .PHONY: dotfiles
 dotfiles: 
-	ansible-playbook -K main.yml --tags dotfiles -v
+	ansible-playbook -K main.yml --tags dotfiles  -i inventory --ask-pass -v
 
 .PHONY: intellij
 intellij: 

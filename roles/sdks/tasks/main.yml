@@ -5,30 +5,28 @@
   include_role:
     name: Comcast.sdkman
   vars:
-    # sdkman_user: ant
-    # sdkman_group: vagrant
     sdkman_auto_answer: true
     sdkman_update: true
-    # sdkman_install_packages:
-    #   - { candidate: java, version: 8.0.202-zulu }
-    #   - { candidate: gradle, version: '3.5' }
-    #   - { candidate: maven, version: 3.5.0 }
-    # sdkman_defaults:
-    #   gradle: '3.5'
-    #   maven: 3.3.9
-    #   java: 8.0.202-zulu
-    # sdkman_flush_caches_before:
-    #   - temp
-    # sdkman_flush_caches_after:
-    #   - archives
-    #   - broadcast
-    #   - candidates
-    #   - temp
+    sdkman_install_packages:
+      - { candidate: java, version: 11.0.11.hs-adpt }
+      - { candidate: gradle, version: 7.2 }
+      - { candidate: maven, version: 3.8.3 }
+    sdkman_defaults:
+      gradle: '7.2'
+      maven: 3.8.3
+      java: 11.0.11.hs-adpt
+    sdkman_flush_caches_before:
+      - temp
+    sdkman_flush_caches_after:
+      - archives
+      - broadcast
+      - candidates
+      - temp
     sdkman_offline_mode: false
 
-# - name: Install gvm
-#   include_role:
-#     name: suzuki-shunsuke.gvm
-
-# TODO setup jenv
+- name: Install gvm
+  include_role:
+    name: suzuki-shunsuke.gvm
+  vars:
+    gvm_update: yes
       

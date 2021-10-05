@@ -6,7 +6,6 @@ mas_installed_app_ids: #todo
 #   - 497799835 # Xcode
 
 homebrew_taps:
-  - adoptopenjdk/openjdk
   - homebrew/cask
   - homebrew/cask-fonts
   - homebrew/cask-versions
