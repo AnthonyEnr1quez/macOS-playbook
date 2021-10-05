@@ -5,31 +5,31 @@
 
   roles:
     - homebrew
-    - zsh
-    - dotfiles
-    - role: gantsign.intellij-plugins
-      intellij_plugins_python_major_version: 3
-      intellij_plugins_intellij_home: '/Applications/Intellij IDEA CE.app/Contents/Resources'
-      intellij_plugins_intellij_user_plugins_dir: 'Library/Application Support/JetBrains/IdeaIC2021.2/plugins'
-      users:
-        - username: ant
-          intellij_plugins:
-            - com.jetbrains.darkPurpleTheme # Dark Purple Theme
-            - google-java-format
-            - MavenRunHelper # Maven Helper
-            - some.awesome # Nyan Progress Bar
-            - izhangzhihao.rainbow.brackets # Rainbow Brackets
-            - com.dubreuia # Save Actions
-            - ris58h.lacopom # Laconic Pom
-            - org.jetbrains.jumpToLine # Jump to Line
-            - com.intellij.plugins.eclipsekeymap # Eclipse Keymap
-            - appland.appmap # AppMap
+  #   - zsh
+  #   - dotfiles
+  #   - role: gantsign.intellij-plugins
+  #     intellij_plugins_python_major_version: 3
+  #     intellij_plugins_intellij_home: '/Applications/Intellij IDEA CE.app/Contents/Resources'
+  #     intellij_plugins_intellij_user_plugins_dir: 'Library/Application Support/JetBrains/IdeaIC2021.2/plugins'
+  #     users:
+  #       - username: ant
+  #         intellij_plugins:
+  #           - com.jetbrains.darkPurpleTheme # Dark Purple Theme
+  #           - google-java-format
+  #           - MavenRunHelper # Maven Helper
+  #           - some.awesome # Nyan Progress Bar
+  #           - izhangzhihao.rainbow.brackets # Rainbow Brackets
+  #           - com.dubreuia # Save Actions
+  #           - ris58h.lacopom # Laconic Pom
+  #           - org.jetbrains.jumpToLine # Jump to Line
+  #           - com.intellij.plugins.eclipsekeymap # Eclipse Keymap
+  #           - appland.appmap # AppMap
 
-  tasks:
-    - name: Create projects dir
-      file:
-        path: "{{ ansible_env.HOME }}/Projects"
-        state: directory
+  # tasks:
+  #   - name: Create projects dir
+  #     file:
+  #       path: "{{ ansible_env.HOME }}/Projects"
+  #       state: directory
     
   #   - name: setup dotfiles
   #     import_role:

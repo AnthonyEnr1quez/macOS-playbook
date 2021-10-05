@@ -5,7 +5,7 @@
 
 
 - name: Install homebrew
-  tags: brew
+  tags: brew #TODO, does not work
   include_role:
     name: geerlingguy.mac.homebrew
   vars:
@@ -16,7 +16,7 @@
     homebrew_taps:
       - adoptopenjdk/openjdk
       - homebrew/cask
-      - caskroom/fonts
+      - homebrew/cask-fonts
       - homebrew/cask-versions
 
     homebrew_installed_packages:
@@ -40,7 +40,7 @@
       # - macfuse
       - mullvadvpn
       # - intellij-idea
-      - intellij-ide-ce
+      - intellij-idea-ce
       # - goland
       - vlc
 

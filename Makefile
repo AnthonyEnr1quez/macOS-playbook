@@ -32,7 +32,7 @@ dotfiles:
 
 .PHONY: brew
 brew: 
-	ansible-playbook -K main.yml --tags brew -v
+	ansible-playbook -K main.yml --tags brew -i inventory --ask-pass -v
 
 .PHONY: intellij
 intellij: 
