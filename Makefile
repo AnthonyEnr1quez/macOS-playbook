@@ -22,6 +22,10 @@ ansible_requirements:
 debug_main:
 	ansible-playbook -K main.yml -i inventory --ask-pass -v
 
+.PHONY: homebrew
+homebrew: 
+	ansible-playbook -K main.yml --tags homebrew -i inventory --ask-pass -v
+
 .PHONY: zsh
 zsh: 
 	ansible-playbook -K main.yml --tags zsh -v
@@ -29,10 +33,6 @@ zsh:
 .PHONY: dotfiles
 dotfiles: 
 	ansible-playbook -K main.yml --tags dotfiles -v
-
-.PHONY: brew
-brew: 
-	ansible-playbook -K main.yml --tags brew -i inventory --ask-pass -v
 
 .PHONY: intellij
 intellij: 
