@@ -1,6 +1,6 @@
 .PHONY: bootstrap_mac
 bootstrap_mac: ## install pre-dependencies needed to install everything on mac
-	xcode-select --install
+	xcode-select --install || exit 0
 	sudo xcodebuild -license
 	which brew || bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	brew list pyenv || brew install pyenv
