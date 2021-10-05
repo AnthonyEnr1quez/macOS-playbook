@@ -36,18 +36,16 @@
     homebrew_upgrade_all_packages: false
 
     homebrew_cask_apps:
-      # - slack
       # - macfuse
-      # - unetbootin
       - mullvadvpn
       # - intellij-idea
       - intellij-ide-ce
       # - goland
       - vlc
-      # - boostnote
 
+      - boostnote
       - docker
-      # - postman
+      - postman
       - alt-tab
       - karabiner-elements
       - font-hack-nerd-font
@@ -68,4 +66,7 @@
       - blobsaver
       - discord
       - balenaetcher
+      - element
+      - unetbootin
+      - slack
       
