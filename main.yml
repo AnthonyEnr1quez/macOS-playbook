@@ -12,6 +12,8 @@
       tags: dotfiles
     - role: intellij
       tags: intellij
+    - role: dock
+      tags: dock
 
   # tasks:
   #   - name: Create projects dir

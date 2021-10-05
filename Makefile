@@ -18,7 +18,9 @@ bootstrap_mac_untested: ## install pre-dependencies needed to install everything
 ansible_requirements:
 	ansible-galaxy install -r requirements.yml
 
-.PHONY: debug_main
+playbook_base= ansible-playbook -K main.yml
+
+.PHONY: main
 debug_main:
 	ansible-playbook -K main.yml -i inventory --ask-pass -v
 
@@ -37,3 +39,11 @@ dotfiles:
 .PHONY: intellij
 intellij: 
 	ansible-playbook -K main.yml --tags intellij -i inventory --ask-pass -v
+
+.PHONY: dock
+dock:
+	ansible-playbook -K main.yml --tags dock -i inventory --ask-pass -v
+
+.PHONY: local_dock
+local_dock:
+	ansible-playbook -K main.yml --tags dock -i inventory --ask-pass -v
