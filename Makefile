@@ -2,7 +2,7 @@
 bootstrap_mac_untested: ## install pre-dependencies needed to install everything on mac
 	#xcode-select --install
 	#sudo xcodebuild -license
-	bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	which brew || bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	brew list pyenv || brew install pyenv
 
 	$(eval python_version := $(shell pyenv install --list | grep --extended-regexp "^\s*[0-9][0-9.]*[0-9]\s*$$" | tail -1))
