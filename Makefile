@@ -22,7 +22,11 @@ playbook_base= ansible-playbook -K main.yml
 
 .PHONY: main
 main:
-	ansible-playbook -K main.yml -i inventory.yml --limit "mojave" --ask-pass -v
+	ansible-playbook -K main.yml -i inventory.yml --limit "local" -v
+
+.PHONE: localhost
+localhost:
+	ansible-playbook -c local -i localhost, main.yml -v
 
 .PHONY: homebrew
 homebrew: 

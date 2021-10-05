@@ -4,6 +4,13 @@
 # [mojave:vars]
 # ansible_python_interpreter=/Users/ant/.pyenv/shims/python
 
+local:
+  hosts:
+    localhost:
+  vars:
+    ansible_connection: local
+    ansible_python_interpreter: /Users/ant/.pyenv/shims/python
+
 mojave:
   hosts:
     192.168.86.206:
