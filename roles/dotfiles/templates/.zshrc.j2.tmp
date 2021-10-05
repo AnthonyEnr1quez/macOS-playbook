@@ -82,11 +82,11 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/ant/.sdkman"
-[[ -s "/Users/ant/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/ant/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 export SDKMAN_OFFLINE_MODE=false
 
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
-[[ -s "/Users/ant/.gvm/scripts/gvm" ]] && source "/Users/ant/.gvm/scripts/gvm"
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
