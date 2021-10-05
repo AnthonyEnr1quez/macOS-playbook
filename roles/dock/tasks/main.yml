@@ -1,11 +1,11 @@
 ---
 # tasks file for dock TODO
-
+# TODO only works localhost
 - name: Setup dock
   include_role:
     name: geerlingguy.mac.dock
   vars:
-    dockitems_remove:
+    dockitems_remove: #TODO update
       - Launchpad
       - Maps
       - Photos

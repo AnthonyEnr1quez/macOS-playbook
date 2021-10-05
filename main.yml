@@ -14,6 +14,8 @@
       tags: intellij
     - role: dock
       tags: dock
+    - role: sdks
+      tags: sdks
 
   # tasks:
   #   - name: Create projects dir

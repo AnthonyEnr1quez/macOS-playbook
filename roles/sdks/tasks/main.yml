@@ -26,9 +26,9 @@
     #   - temp
     sdkman_offline_mode: false
 
-- name: Install gvm
-  include_role:
-    name: suzuki-shunsuke.gvm
+# - name: Install gvm
+#   include_role:
+#     name: suzuki-shunsuke.gvm
 
 # TODO setup jenv
       

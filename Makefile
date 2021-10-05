@@ -44,6 +44,10 @@ intellij:
 dock:
 	ansible-playbook -K main.yml --tags dock -i inventory --ask-pass -v
 
+.PHONY: remote_sdks
+remote_sdks:
+	ansible-playbook -K main.yml --tags sdks -i inventory --ask-pass -v
+
 .PHONY: local_dock
 local_dock:
 	ansible-playbook -K main.yml --tags dock -v
