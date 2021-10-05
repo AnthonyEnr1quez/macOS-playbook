@@ -18,11 +18,19 @@ bootstrap_mac_untested: ## install pre-dependencies needed to install everything
 ansible_requirements:
 	ansible-galaxy install -r requirements.yml
 
-playbook_base= ansible-playbook -K main.yml
+playbook_base= ansible-playbook -K main.yml -i inventory.yml -v
 
-.PHONY: main
-main:
-	ansible-playbook -K main.yml -i inventory.yml --limit "local" -v
+.PHONY: mojave
+mojave:
+	$(playbook_base) --limit mojave --ask-pass
+
+.PHONY: tags
+tags:
+	ansible-playbook -K main.yml --tags $(tags) -i inventory.yml  --limit mojave --ask-pass -v
+
+.PHONY: local
+local:
+	$(playbook_base) --limit local
 
 .PHONE: localhost
 localhost:
