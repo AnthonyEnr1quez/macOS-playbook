@@ -13,4 +13,8 @@
 - name: Install homebrew
   include_role:
     name: geerlingguy.mac.homebrew
+
+# - name: Install app store apps
+#   include_role:
+#     name: geerlingguy.mac.mas
       
