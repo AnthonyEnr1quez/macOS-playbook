@@ -22,44 +22,36 @@ playbook_base= ansible-playbook -K main.yml -i inventory.yml -v
 
 .PHONY: mojave
 mojave:
-	$(playbook_base) --limit mojave --ask-pass
-
-.PHONY: tags
-tags:
-	ansible-playbook -K main.yml --tags $(tags) -i inventory.yml  --limit mojave --ask-pass -v
+	$(playbook_base) --limit mojave --ask-pass $(optional_tags)
 
 .PHONY: local
 local:
-	$(playbook_base) --limit local
+	$(playbook_base) --limit local $(optional_tags)
 
-.PHONE: localhost
-localhost:
-	ansible-playbook -c local -i localhost, main.yml -v
+.PHONY: tags
+tags:
+	make $(host) optional_tags="--tags $(tags)"
 
 .PHONY: homebrew
 homebrew: 
-	ansible-playbook -K main.yml --tags homebrew -i inventory --ask-pass -v
+	make tags host=$(host) tags=homebrew
 
 .PHONY: zsh
 zsh: 
-	ansible-playbook -K main.yml --tags zsh -v
+	make tags host=$(host) tags=zsh
 
 .PHONY: dotfiles
 dotfiles: 
-	ansible-playbook -K main.yml --tags dotfiles  -i inventory.yml --ask-pass -v
+	make tags host=$(host) tags=dotfiles
 
 .PHONY: intellij
 intellij: 
-	ansible-playbook -K main.yml --tags intellij -i inventory.yml --ask-pass -v
+	make tags host=$(host) tags=intellij
 
 .PHONY: dock
 dock:
-	ansible-playbook -K main.yml --tags dock -i inventory --ask-pass -v
+	make tags host=$(host) tags=dock
 
-.PHONY: remote_sdks
-remote_sdks:
-	ansible-playbook -K main.yml --tags sdks -i inventory --ask-pass -v
-
-.PHONY: local_dock
-local_dock:
-	ansible-playbook -K main.yml --tags dock -v
+.PHONY: sdks
+sdks:
+	make tags host=$(host) tags=sdks
