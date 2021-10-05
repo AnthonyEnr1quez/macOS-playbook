@@ -16,20 +16,5 @@
       tags: dock
     - role: sdks
       tags: sdks
-
-  # tasks:
-  #   - name: Create projects dir
-  #     file:
-  #       path: "{{ ansible_env.HOME }}/Projects"
-  #       state: directory
-    
-  #   - name: setup dotfiles
-  #     import_role:
-  #       name: dotfiles
-  #   - name: Don’t display the annoying prompt when quitting iTerm
-  #     tags: macos
-  #     osx_defaults:
-  #       domain: com.googlecode.iterm2
-  #       key: PromptOnQuit
-  #       type: int
-  #       value: "0"
+    - role: osx_defaults
+      tags: osx_defaults

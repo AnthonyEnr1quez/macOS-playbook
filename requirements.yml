@@ -7,4 +7,5 @@ roles:
     version: v6.0.0
 
 collections:
+  - name: community.general
   - name: geerlingguy.mac

@@ -62,3 +62,7 @@ dock:
 .PHONY: sdks
 sdks:
 	make tags host=$(host) tags=sdks
+
+.PHONY: osx_defaults
+osx_defaults:
+	make tags host=$(host) tags=osx_defaults
