@@ -31,7 +31,7 @@ dotfiles:
 	ansible-playbook -K main.yml --tags dotfiles -v
 
 .PHONY: brew
-dotfiles: 
+brew: 
 	ansible-playbook -K main.yml --tags brew -v
 
 .PHONY: intellij
