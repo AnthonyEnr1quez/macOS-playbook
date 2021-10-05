@@ -4,7 +4,7 @@
   become: no
 
   roles:
-    # - homebrew
+    - homebrew
     - zsh
     - dotfiles
     - role: gantsign.intellij-plugins

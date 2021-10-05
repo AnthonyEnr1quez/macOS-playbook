@@ -30,6 +30,10 @@ zsh:
 dotfiles: 
 	ansible-playbook -K main.yml --tags dotfiles -v
 
+.PHONY: brew
+dotfiles: 
+	ansible-playbook -K main.yml --tags brew -v
+
 .PHONY: intellij
 intellij: 
 	ansible-playbook -K main.yml --tags intellij -i inventory --ask-pass -v

@@ -5,6 +5,7 @@
 
 
 - name: Install homebrew
+  tags: brew
   include_role:
     name: geerlingguy.mac.homebrew
   vars:
