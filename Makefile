@@ -46,4 +46,4 @@ dock:
 
 .PHONY: local_dock
 local_dock:
-	ansible-playbook -K main.yml --tags dock -i inventory --ask-pass -v
+	ansible-playbook -K main.yml --tags dock -v

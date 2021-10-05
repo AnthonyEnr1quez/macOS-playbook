@@ -1,5 +1,5 @@
 - name: mac setup v1
-  hosts: mojave
+  hosts: localhost
   gather_facts: yes
   become: no
 
