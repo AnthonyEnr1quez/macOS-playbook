@@ -3,70 +3,14 @@
 
 # https://github.com/geerlingguy/ansible-collection-mac/blob/master/roles/homebrew/README.md
 
+# - name: get task vars
+#   include_vars: 
+#     dir: vars
+#     name: test
+    # ignore_files:
+    #  - personal.yml
 
 - name: Install homebrew
   include_role:
     name: geerlingguy.mac.homebrew
-  vars:
-    mas_installed_app_ids: #todo
-      - 937984704 # Amphetamine
-  #   - 497799835 # Xcode
-
-    homebrew_taps:
-      - adoptopenjdk/openjdk
-      - homebrew/cask
-      - homebrew/cask-fonts
-      - homebrew/cask-versions
-
-    homebrew_installed_packages:
-      - git
-      - bash
-      - coreutils
-      - gawk
-      - htop
-      - gnu-sed
-      - zsh
-      - zsh-completion
-      - antibody
-      - zlib
-      - pyenv
-      - docker-compose
-      - jenv
-    
-    homebrew_upgrade_all_packages: false
-
-    homebrew_cask_apps:
-      # - macfuse
-      - mullvadvpn
-      # - intellij-idea
-      - intellij-idea-ce
-      # - goland
-      - vlc
-
-      - boostnote
-      - docker
-      - postman
-      - alt-tab
-      - karabiner-elements
-      - font-hack-nerd-font
-      - bitwarden
-      - flux
-      - the-unarchiver
-      - iterm2
-      - firefox-developer-edition # todo test #homebrew/cask-versions/firefox-developer-edition
-      - visual-studio-code
-      - sensiblesidebuttons
-      - scroll-reverser
-
-      - signal
-      - steam
-      - geekbench
-      - telegram-desktop
-      - impactor
-      - blobsaver
-      - discord
-      - balenaetcher
-      - element
-      - unetbootin
-      - slack
       

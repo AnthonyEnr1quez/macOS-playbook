@@ -1,0 +1,64 @@
+---
+# vars file for homebrew
+
+mas_installed_app_ids: #todo
+  - 937984704 # Amphetamine
+#   - 497799835 # Xcode
+
+homebrew_taps:
+  - adoptopenjdk/openjdk
+  - homebrew/cask
+  - homebrew/cask-fonts
+  - homebrew/cask-versions
+
+homebrew_installed_packages:
+  - git
+  - bash
+  - coreutils
+  - gawk
+  - htop
+  - gnu-sed
+  - zsh
+  - zsh-completion
+  - antibody
+  - zlib
+  - pyenv
+  - docker-compose
+  - jenv
+
+homebrew_upgrade_all_packages: false
+
+homebrew_cask_apps:
+  - mullvadvpn
+  # - intellij-idea
+  - intellij-idea-ce
+  # - goland
+  - vlc
+  - boostnote
+  - docker
+  - postman
+  - alt-tab
+  - karabiner-elements
+  - font-hack-nerd-font
+  - bitwarden
+  - flux
+  - the-unarchiver
+  - iterm2
+  - firefox-developer-edition # todo test #homebrew/cask-versions/firefox-developer-edition
+  - visual-studio-code
+  - sensiblesidebuttons
+  - scroll-reverser
+
+  # personal, todo load dynamically from diff var file
+  - signal
+  - steam
+  - geekbench
+  - telegram-desktop
+  - impactor
+  - blobsaver
+  - discord
+  - balenaetcher
+  - element
+  - unetbootin
+  - slack
+  - macfuse
