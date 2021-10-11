@@ -24,40 +24,42 @@ homebrew_installed_packages:
   - pyenv
   - docker-compose
   - jenv
+  - kubectl
+  - helm@2
 
 homebrew_upgrade_all_packages: false
 
 homebrew_cask_apps:
-  - mullvadvpn
   # - intellij-idea
-  - intellij-idea-ce
+  # - intellij-idea-ce
   # - goland
-  - vlc
+  # - vlc #broken with covid19 thingy
   - boostnote
-  - docker
-  - postman
+  # - docker
+  # - postman
   - alt-tab
   - karabiner-elements
   - font-hack-nerd-font
   - bitwarden
-  - flux
+  # - flux #broken with covid19 thingy
   - the-unarchiver
-  - iterm2
-  - firefox-developer-edition # todo test #homebrew/cask-versions/firefox-developer-edition
-  - visual-studio-code
+  # - iterm2 #broken with covid19 thingy
+  - firefox-developer-edition
+  # - visual-studio-code
   - sensiblesidebuttons
   - scroll-reverser
 
   # personal, todo load dynamically from diff var file
-  - signal
-  - steam
-  - geekbench
-  - telegram-desktop
-  - impactor
-  - blobsaver
-  - discord
-  - balenaetcher
-  - element
-  - unetbootin
-  - slack
-  - macfuse
+  # - mullvadvpn
+  # - signal
+  # - steam
+  # - geekbench
+  # - telegram-desktop
+  # - impactor
+  # - blobsaver
+  # - discord
+  # - balenaetcher
+  # - element
+  # - unetbootin
+  # - slack
+  # - macfuse

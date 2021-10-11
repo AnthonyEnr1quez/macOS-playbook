@@ -1,10 +1,17 @@
 ---
-local:
+# local:
+#   hosts:
+#     localhost:
+#   vars:
+#     ansible_connection: local
+#     ansible_python_interpreter: /Users/ant/.pyenv/shims/python
+
+work:
   hosts:
     localhost:
   vars:
     ansible_connection: local
-    ansible_python_interpreter: /Users/ant/.pyenv/shims/python
+    ansible_python_interpreter: /Users/aenriquez/.pyenv/shims/python
 
 mojave:
   hosts:

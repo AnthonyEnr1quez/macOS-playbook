@@ -1,7 +1,7 @@
 .PHONY: bootstrap_mac
 bootstrap_mac: ## install pre-dependencies needed to install everything on mac
 	xcode-select --install || exit 0
-	sudo xcodebuild -license
+	# sudo xcodebuild -license
 	which brew || bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	brew list pyenv || brew install pyenv
 
@@ -34,6 +34,10 @@ mojave:
 .PHONY: local
 local:
 	$(playbook_base) --limit local $(optional_tags)
+
+.PHONY: work
+work:
+	$(playbook_base) --limit work $(optional_tags)
 
 .PHONY: tags
 tags:

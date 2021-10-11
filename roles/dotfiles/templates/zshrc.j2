@@ -76,7 +76,8 @@ alias gfu='git fetch upstream && git checkout master && git rebase upstream/mast
  #intellij
 alias idea='open -na "IntelliJ IDEA.app" --args "$@"'
 
- #sdks
+#sdks
+# TODO, pyenv has to be in config file before boostrap
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init --path)"
 fi
