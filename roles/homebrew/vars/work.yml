@@ -6,9 +6,10 @@ host_homebrew_installed_packages:
   - git-crypt
   - gnupg
   - gopass
+  - postgresql
 
 host_homebrew_cask_apps:
-  - insomnia # temp since empty list causes error
+  - pgadmin4
   # - slack #self service
   # - goland #self service
   # - docker #self service
