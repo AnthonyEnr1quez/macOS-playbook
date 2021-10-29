@@ -1,0 +1,69 @@
+---
+# tasks file for jetbrains
+
+- name: set variable file
+  include_vars: "vars/{{ var_file_name }}.yml"
+  ignore_errors: yes
+
+- name: "find jetbrains installs"
+  find:
+    paths: "{{ ansible_env.HOME }}/Library/Application Support/JetBrains"
+    exclude: "Goland,bl,crl,consentOptions"
+    recurse: no
+    file_type: directory
+  register: find_logs
+
+- set_fact:
+    installs: "{{ installs | default([])}} + [ '{{ item.path| basename }}' ]"
+  with_items: "{{ find_logs.files }}"
+
+- name: install intellij plugins
+  when: "installs | select('match','IntelliJ*') | list | length == 1"
+  include_role:
+    name: gantsign.intellij-plugins
+    apply:
+      environment: "{{ proxy_env | default ({}) }}"
+  vars:
+    intellij_plugins_python_major_version: 3
+    intellij_plugins_intellij_home: '/Applications/Intellij IDEA.app/Contents/Resources'
+    intellij_plugins_intellij_user_plugins_dir: "{{ 'Library/Application Support/JetBrains/' + (installs | select('match','IntelliJ*') | list | first) + '/plugins'}}"
+    users:
+      - username: "{{ ansible_user_id }}"
+        intellij_plugins: "{{ general_plugins + java_plugins }}"
+
+- name: install intellij ce plugins
+  when: "installs | select('match','IdeaIC*') | list | length == 1"
+  include_role:
+    name: gantsign.intellij-plugins
+    apply:
+      environment: "{{ proxy_env | default ({}) }}"
+  vars:
+    intellij_plugins_python_major_version: 3
+    intellij_plugins_intellij_home: '/Applications/Intellij IDEA CE.app/Contents/Resources'
+    intellij_plugins_intellij_user_plugins_dir: "{{ 'Library/Application Support/JetBrains/' + (installs | select('match','IdeaIC*') | list | first) + '/plugins'}}"
+    users:
+      - username: "{{ ansible_user_id }}"
+        intellij_plugins: "{{ general_plugins + java_plugins }}"
+
+- name: install goland plugins
+  when: "installs | select('match','GoLand*') | list | length == 1"
+  include_role:
+    name: gantsign.intellij-plugins
+    apply:
+      environment: "{{ proxy_env | default ({}) }}"
+  vars:
+    intellij_plugins_python_major_version: 3
+    intellij_plugins_intellij_home: '/Applications/GoLand.app/Contents/Resources'
+    intellij_plugins_intellij_user_plugins_dir: "{{ 'Library/Application Support/JetBrains/' + (installs | select('match','GoLand*') | list | first) + '/plugins'}}"
+    users:
+      - username: "{{ ansible_user_id }}"
+        intellij_plugins: "{{ general_plugins }}"
+
+# TODO for goland and intellij   
+# - name: copy keymap
+#   copy:
+#     src: ant_mac_keymap.xml
+#     dest: "{{ ansible_env.HOME }}/Library/Application Support/JetBrains/IdeaIC2021.2/keymaps/ant_mac_keymap.xml"
+#     # backup: yes
+#     mode: 0640
+    

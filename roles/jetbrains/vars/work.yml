@@ -1,0 +1,4 @@
+---
+
+proxy_env:
+  https_proxy: http://localhost:3128

@@ -1,0 +1,15 @@
+---
+# vars file for jetbrains
+
+general_plugins:
+  - com.jetbrains.darkPurpleTheme # Dark Purple Theme
+  - some.awesome # Nyan Progress Bar
+  - izhangzhihao.rainbow.brackets # Rainbow Brackets
+  - com.intellij.plugins.eclipsekeymap # Eclipse Keymap
+
+java_plugins:
+  - google-java-format
+  - MavenRunHelper # Maven Helper
+  - com.dubreuia # Save Actions
+  - ris58h.lacopom # Laconic Pom
+  - org.jetbrains.jumpToLine # Jump to Line

@@ -1,0 +1,24 @@
+---
+
+host_homebrew_cask_apps:
+  - intellij-idea-ce
+  - vlc
+  - docker
+  - postman
+  - flux
+  - iterm2
+  - visual-studio-code
+  - mullvadvpn
+  - signal
+  - steam
+  - geekbench
+  - telegram-desktop
+  - impactor
+  - blobsaver
+  - discord
+  - balenaetcher
+  - element
+  - unetbootin
+  - slack
+  - macfuse
+  # - goland

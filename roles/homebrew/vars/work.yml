@@ -1,0 +1,19 @@
+---
+
+host_homebrew_installed_packages:
+  - kubectl
+  - helm@2
+  - git-crypt
+  - gnupg
+  - gopass
+
+host_homebrew_cask_apps:
+  - insomnia # temp since empty list causes error
+  # - slack #self service
+  # - goland #self service
+  # - docker #self service
+  # - postman #self service
+  # - visual-studio-code #self service
+  # - vlc #broken with covid19 thingy
+  # - flux #broken with covid19 thingy
+  # - iterm2 #broken with covid19 thingy

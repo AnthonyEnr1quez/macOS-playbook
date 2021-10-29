@@ -1,0 +1,57 @@
+---
+
+dockitems_remove: 
+  - Launchpad
+  - Maps
+  - Photos
+  - TV
+  - Podcasts
+  - News
+  - Keynote
+  - Numbers
+  - Pages
+  - App Store
+  - System Preferences
+  - FaceTime
+
+dockitems_persist:
+  - name: Calendar
+    path: /Applications/Calendar.app
+    pos: 1
+  - name: Contacts
+    path: /Applications/Contacts.app
+    pos: 2
+  - name: Reminders
+    path: /Applications/Reminders.app
+    pos: 3
+  - name: Notes
+    path: /Applications/Notes.app
+    pos: 4
+  - name: Music
+    path: /Applications/Music.app
+    pos: 5
+  - name: Mail
+    path: /Applications/Mail.app
+    pos: 6
+  - name: Messages
+    path: /Applications/Messages.app
+    pos: 7
+  - name: Signal
+    path: /Applications/Signal.app
+    pos: 8
+  - name: Firefox Developer Edition
+    path: /Applications/Firefox Developer Edition.app
+    pos: 9
+  - name: Safari
+    path: /Applications/Safari.app
+    pos: 10
+  - name: iTerm
+    path: /Applications/iTerm.app
+    pos: 11
+  - name: Visual Studio Code
+    path: /Applications/Visual Studio Code.app
+    pos: 12
+  - name: IntelliJ IDEA CE
+    path: /Applications/IntelliJ IDEA CE.app
+    pos: 13
+    

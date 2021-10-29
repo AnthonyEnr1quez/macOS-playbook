@@ -1,20 +1,24 @@
 ---
-# local:
-#   hosts:
-#     localhost:
-#   vars:
-#     ansible_connection: local
-#     ansible_python_interpreter: /Users/ant/.pyenv/shims/python
-
-work:
+mojave_local:
   hosts:
-    localhost:
+    personal_mac:
   vars:
     ansible_connection: local
-    ansible_python_interpreter: /Users/aenriquez/.pyenv/shims/python
+    ansible_python_interpreter: /Users/ant/.pyenv/shims/python
+    var_file_name: mojave
 
-mojave:
+mojave_remote:
   hosts:
     192.168.86.206:
   vars:
     ansible_python_interpreter: /Users/ant/.pyenv/shims/python
+    var_file_name: mojave
+
+work:
+  hosts:
+    work_mac:
+  vars:
+    ansible_connection: local
+    ansible_python_interpreter: /Users/aenriquez/.pyenv/shims/python
+    var_file_name: work
+    

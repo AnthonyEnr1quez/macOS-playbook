@@ -10,8 +10,8 @@
       tags: zsh
     - role: dotfiles
       tags: dotfiles
-    - role: intellij
-      tags: intellij
+    - role: jetbrains
+      tags: jetbrains
     - role: dock
       tags: dock
     - role: sdks

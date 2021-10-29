@@ -1,8 +1,10 @@
 ---
 # tasks file for dotfiles
 
-# todo, file permissions
+- name: set variable file
+  include_vars: "vars/{{ var_file_name }}.yml"
 
+# todo, file permissions
 - name: create zshrc in home dir
   template:
     src: zshrc.j2
@@ -16,9 +18,6 @@
     dest: "{{ ansible_env.HOME }}/.zsh_plugins.txt"
     #backup: true
     mode: 0640
-
-- name: set variable file
-  include_vars: vars/personal.yml
 
 - name: create gitconfig in home dir
   template:
@@ -34,10 +33,11 @@
     # backup: yes
     mode: 0640
 
-- name: copy karabiner config
-  copy:
-    src: remap_command_h_intellij.json
-    dest: "{{ ansible_env.HOME }}/.config/karabiner/assets/complex_modifications/remap_command_h_intellij.json"
-    # backup: yes
-    mode: 0640
+# TODO
+# - name: copy karabiner config
+#   copy:
+#     src: remap_command_h_intellij.json
+#     dest: "{{ ansible_env.HOME }}/.config/karabiner/assets/complex_modifications/remap_command_h_intellij.json"
+#     # backup: yes
+#     mode: 0640
     

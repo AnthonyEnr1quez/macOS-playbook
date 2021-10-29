@@ -27,13 +27,13 @@ ansible_requirements:
 
 playbook_base= ansible-playbook -K main.yml -i inventory.yml -v
 
-.PHONY: mojave
-mojave:
-	$(playbook_base) --limit mojave --ask-pass $(optional_tags)
+.PHONY: mojave_remote
+mojave_remote:
+	$(playbook_base) --limit mojave_remote --ask-pass $(optional_tags)
 
-.PHONY: local
-local:
-	$(playbook_base) --limit local $(optional_tags)
+.PHONY: mojave_local
+mojave_local:
+	$(playbook_base) --limit mojave_local $(optional_tags)
 
 .PHONY: work
 work:
@@ -55,9 +55,9 @@ zsh:
 dotfiles: 
 	make tags host=$(host) tags=dotfiles
 
-.PHONY: intellij
-intellij: 
-	make tags host=$(host) tags=intellij
+.PHONY: jetbrains
+jetbrains: 
+	make tags host=$(host) tags=jetbrains
 
 .PHONY: dock
 dock:

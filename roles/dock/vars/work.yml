@@ -1,0 +1,47 @@
+---
+
+dockitems_remove: 
+  - LaunchPad
+  - Maps
+  - Photos
+  - TV
+  - Podcasts
+  - News
+  - Keynote
+  - Numbers
+  - Pages
+  - App Store
+  - System Preferences
+  - FaceTime
+
+dockitems_persist:
+  - name: Firefox Developer Edition
+    path: /Applications/Firefox Developer Edition.app
+    pos: 1
+  - name: Microsoft Outlook
+    path: /Applications/Microsoft Outlook.app
+    pos: 2
+  - name: Slack
+    path: /Users/aenriquez/Applications/Slack.app
+    pos: 3
+  - name: Cisco Webex Meetings
+    path: /Applications/Cisco Webex Meetings.app
+    pos: 4
+  - name: Cisco AnyConnect Secure Mobility Client
+    path: /Applications/Cisco/Cisco AnyConnect Secure Mobility Client.app
+    pos: 5
+  - name: Self Service
+    path: /Applications/Self Service.app
+    pos: 6
+  - name: iTerm
+    path: /Applications/iTerm.app
+    pos: 7
+  - name: GoLand
+    path: /Applications/GoLand.app
+    pos: 8
+  - name: Visual Studio Code
+    path: /Applications/Visual Studio Code.app
+    pos: 9
+  - name: Boost Note - Local
+    path: /Applications/Boost Note - Local.app
+    pos: 10

@@ -3,16 +3,15 @@
 
 # https://github.com/geerlingguy/ansible-collection-mac/blob/master/roles/homebrew/README.md
 
-# - name: get task vars
-#   include_vars: 
-#     dir: vars
-#     name: test
-    # ignore_files:
-    #  - personal.yml
+- name: set variable file
+  include_vars: "vars/{{ var_file_name }}.yml"
 
 - name: Install homebrew
   include_role:
     name: geerlingguy.mac.homebrew
+  vars:
+    homebrew_installed_packages: "{{ general_homebrew_installed_packages + host_homebrew_installed_packages }}"
+    homebrew_cask_apps: "{{ general_homebrew_cask_apps + host_homebrew_cask_apps }}"
 
 # - name: Install app store apps
 #   include_role:
