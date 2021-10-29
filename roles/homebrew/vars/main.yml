@@ -2,7 +2,6 @@
 # vars file for homebrew
 
 mas_installed_app_ids: #todo
-  - 937984704 # Amphetamine
   - 497799835 # Xcode
 
 homebrew_taps:
