@@ -39,4 +39,5 @@ general_homebrew_cask_apps:
   - sensiblesidebuttons
   - scroll-reverser
   - insomnia
+  - keepingyouawake
   # - boost-note https://github.com/BoostIO/BoostNote.next-local
