@@ -42,6 +42,12 @@ dockitems_persist:
   - name: Visual Studio Code
     path: /Applications/Visual Studio Code.app
     pos: 9
+  - name: Postman
+    path: /Applications/Postman.app
+    pos: 10
+  - name: pgAdmin 4
+    path: /Applications/pgAdmin 4.app
+    pos: 11
   - name: Boost Note - Local
     path: /Applications/Boost Note - Local.app
-    pos: 10
+    pos: 12

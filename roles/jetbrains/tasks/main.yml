@@ -57,13 +57,13 @@
     intellij_plugins_intellij_user_plugins_dir: "{{ 'Library/Application Support/JetBrains/' + (installs | select('match','GoLand*') | list | first) + '/plugins'}}"
     users:
       - username: "{{ ansible_user_id }}"
-        intellij_plugins: "{{ general_plugins }}"
+        intellij_plugins: "{{ general_plugins + goland_plugins }}"
 
-# TODO for goland and intellij   
-# - name: copy keymap
-#   copy:
-#     src: ant_mac_keymap.xml
-#     dest: "{{ ansible_env.HOME }}/Library/Application Support/JetBrains/IdeaIC2021.2/keymaps/ant_mac_keymap.xml"
-#     # backup: yes
-#     mode: 0640
+# TODO for intellij
+- name: Copy Goland keymap
+  copy:
+    src: goland_keymap.xml
+    dest: "{{ (ansible_env.HOME) + '/Library/Application Support/JetBrains/' + (installs | select('match','GoLand*') | list | first) + '/keymaps/goland_keymap.xml'}}"
+    # backup: yes
+    mode: 0640
     

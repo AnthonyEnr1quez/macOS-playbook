@@ -13,3 +13,6 @@ java_plugins:
   - com.dubreuia # Save Actions
   - ris58h.lacopom # Laconic Pom
   - org.jetbrains.jumpToLine # Jump to Line
+
+goland_plugins:
+  - ro.florinpatan.gopher # Gopher progress bar

@@ -10,6 +10,7 @@
   include_role:
     name: geerlingguy.mac.homebrew
   vars:
+    homebrew_taps: "{{ general_homebrew_taps + host_homebrew_taps}}"
     homebrew_installed_packages: "{{ general_homebrew_installed_packages + host_homebrew_installed_packages }}"
     homebrew_cask_apps: "{{ general_homebrew_cask_apps + host_homebrew_cask_apps }}"
 

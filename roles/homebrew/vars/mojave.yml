@@ -1,5 +1,7 @@
 ---
 
+host_homebrew_taps: []
+
 host_homebrew_cask_apps:
   - intellij-idea-ce
   - vlc
@@ -21,4 +23,5 @@ host_homebrew_cask_apps:
   - unetbootin
   - slack
   - macfuse
+  - bitwarden
   # - goland

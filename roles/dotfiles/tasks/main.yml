@@ -32,12 +32,4 @@
     dest: "{{ ansible_env.HOME }}/.dircolors"
     # backup: yes
     mode: 0640
-
-# TODO
-# - name: copy karabiner config
-#   copy:
-#     src: remap_command_h_intellij.json
-#     dest: "{{ ansible_env.HOME }}/.config/karabiner/assets/complex_modifications/remap_command_h_intellij.json"
-#     # backup: yes
-#     mode: 0640
     

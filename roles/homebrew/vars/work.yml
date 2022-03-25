@@ -1,7 +1,12 @@
 ---
 
+host_homebrew_taps:
+- int128/kubelogin
+
 host_homebrew_installed_packages:
   - kubectl
+  - kubelogin
+  - kubectx
   - helm@2
   - git-crypt
   - gnupg
