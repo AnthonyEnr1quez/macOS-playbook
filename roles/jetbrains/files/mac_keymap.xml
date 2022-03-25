@@ -1,4 +1,4 @@
-<keymap version="1" name="goland_keymap" parent="Eclipse (Mac OS X)">
+<keymap version="1" name="mac_keymap" parent="Eclipse (Mac OS X)">
   <action id="Back">
     <mouse-shortcut keystroke="button4" />
     <keyboard-shortcut first-keystroke="meta left" />

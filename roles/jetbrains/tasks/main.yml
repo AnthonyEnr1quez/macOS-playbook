@@ -59,11 +59,14 @@
       - username: "{{ ansible_user_id }}"
         intellij_plugins: "{{ general_plugins + goland_plugins }}"
 
-# TODO for intellij
-- name: Copy Goland keymap
+# TODO have to create keymap dir before, check parent in intellij
+- name: Copy keymap
   copy:
-    src: goland_keymap.xml
-    dest: "{{ (ansible_env.HOME) + '/Library/Application Support/JetBrains/' + (installs | select('match','GoLand*') | list | first) + '/keymaps/goland_keymap.xml'}}"
+    src: mac_keymap.xml
+    dest: "{{ (ansible_env.HOME) + '/Library/Application Support/JetBrains/' + item + '/keymaps/mac_keymap.xml'}}"
     # backup: yes
     mode: 0640
+  with_items:
+    - "{{ (installs | select('match','GoLand*') | list | first) }}"
+    - "{{ (installs | select('match','IntelliJ*') | list | first) }}"
     
