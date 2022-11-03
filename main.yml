@@ -1,4 +1,4 @@
-- name: mac setup v1
+- name: macOS-playbook
   hosts: all
   gather_facts: yes
   become: no

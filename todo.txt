@@ -1,7 +1,0 @@
-- alt tab config
-- font in ide and terminal
-- firefox config
-- update wallpaper
-- setup iterm
-- git ssh?
-- https://apple.stackexchange.com/questions/199654/how-to-change-system-hide-all-keyboard-shortcut

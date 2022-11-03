@@ -1,4 +1,3 @@
-.PHONY: bootstrap_mac
 bootstrap_mac: ## install pre-dependencies needed to install everything on mac
 	xcode-select --install || exit 0
 	# sudo xcodebuild -license
